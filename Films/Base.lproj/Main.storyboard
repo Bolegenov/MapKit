@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J93-2h-tuh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J93-2h-tuh">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -55,6 +58,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Afo-Hc-XZG">
+                                <rect key="frame" x="57" y="629" width="280" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="показать маршрут к кинотеатру"/>
+                                <connections>
+                                    <action selector="mapViewTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PCO-sS-v5I"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -71,6 +83,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2475.5725190839694" y="27.464788732394368"/>
+        </scene>
+        <!--View Map Controller-->
+        <scene sceneID="zmm-vn-szm">
+            <objects>
+                <viewController storyboardIdentifier="detailMapView" id="4fJ-c7-TqH" customClass="ViewMapController" customModule="Films" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gfc-1A-rHk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V5a-sx-Dau">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mms-3a-4y4">
+                                <rect key="frame" x="326" y="689.66666666666663" width="39" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <color key="titleColor" systemColor="opaqueSeparatorColor"/>
+                                    <imageReference key="backgroundImage" image="location.square.fill" catalog="system" variableValue="0.0"/>
+                                </state>
+                                <connections>
+                                    <action selector="showMyLocation:" destination="4fJ-c7-TqH" eventType="touchUpInside" id="b0S-GY-fEa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9x-Jd-cK5">
+                                <rect key="frame" x="16" y="775" width="201" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rMr-gE-WNi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rMr-gE-WNi" firstAttribute="bottom" secondItem="V5a-sx-Dau" secondAttribute="bottom" id="55V-Oc-ltK"/>
+                            <constraint firstItem="rMr-gE-WNi" firstAttribute="trailing" secondItem="V5a-sx-Dau" secondAttribute="trailing" id="578-IP-BgU"/>
+                            <constraint firstItem="V5a-sx-Dau" firstAttribute="top" secondItem="rMr-gE-WNi" secondAttribute="top" id="Ryn-UP-JME"/>
+                            <constraint firstItem="V5a-sx-Dau" firstAttribute="leading" secondItem="rMr-gE-WNi" secondAttribute="leading" id="fgI-fu-dDt"/>
+                            <constraint firstItem="rMr-gE-WNi" firstAttribute="bottom" secondItem="V5a-sx-Dau" secondAttribute="bottom" id="hDC-rQ-UUf"/>
+                            <constraint firstItem="V5a-sx-Dau" firstAttribute="leading" secondItem="rMr-gE-WNi" secondAttribute="leading" id="kJ5-nY-NDS"/>
+                            <constraint firstItem="rMr-gE-WNi" firstAttribute="trailing" secondItem="V5a-sx-Dau" secondAttribute="trailing" id="kYK-YQ-iid"/>
+                            <constraint firstItem="V5a-sx-Dau" firstAttribute="top" secondItem="rMr-gE-WNi" secondAttribute="top" id="ncn-eo-VXd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hjh-pK-nec"/>
+                    <connections>
+                        <outlet property="distanceLabel" destination="z9x-Jd-cK5" id="5rd-d6-sM5"/>
+                        <outlet property="mapView" destination="V5a-sx-Dau" id="C8U-mN-8yn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KSe-f4-JgN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3217.5572519083967" y="26.760563380281692"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="y5Z-Iu-GTP">
@@ -161,7 +228,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="person.fill.badge.plus" catalog="system" width="128" height="125"/>
+        <image name="location.square.fill" catalog="system" width="128" height="114"/>
+        <image name="person.fill.badge.plus" catalog="system" width="128" height="126"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

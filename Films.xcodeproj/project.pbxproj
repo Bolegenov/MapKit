@@ -15,6 +15,8 @@
 		E3201F682A822957006DBA8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3201F662A822957006DBA8D /* LaunchScreen.storyboard */; };
 		E3201F702A822DC1006DBA8D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3201F6F2A822DC1006DBA8D /* TableViewController.swift */; };
 		E3201F722A823078006DBA8D /* Films.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3201F712A823078006DBA8D /* Films.swift */; };
+		E35C93252B9B7E9400DBF784 /* Cinema.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35C93242B9B7E9400DBF784 /* Cinema.swift */; };
+		E3C520292B821C5A001ACD82 /* ViewMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C520282B821C59001ACD82 /* ViewMapController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		E3201F692A822957006DBA8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3201F6F2A822DC1006DBA8D /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		E3201F712A823078006DBA8D /* Films.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Films.swift; sourceTree = "<group>"; };
+		E35C93242B9B7E9400DBF784 /* Cinema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cinema.swift; sourceTree = "<group>"; };
+		E3C520282B821C59001ACD82 /* ViewMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMapController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +66,10 @@
 			children = (
 				E3201F5B2A822955006DBA8D /* AppDelegate.swift */,
 				E3201F5D2A822955006DBA8D /* SceneDelegate.swift */,
+				E35C93242B9B7E9400DBF784 /* Cinema.swift */,
 				E3201F712A823078006DBA8D /* Films.swift */,
 				E3201F5F2A822955006DBA8D /* ViewController.swift */,
+				E3C520282B821C59001ACD82 /* ViewMapController.swift */,
 				E3201F6F2A822DC1006DBA8D /* TableViewController.swift */,
 				E3201F612A822955006DBA8D /* Main.storyboard */,
 				E3201F642A822957006DBA8D /* Assets.xcassets */,
@@ -101,7 +107,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					E3201F572A822955006DBA8D = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -144,7 +150,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E35C93252B9B7E9400DBF784 /* Cinema.swift in Sources */,
 				E3201F602A822955006DBA8D /* ViewController.swift in Sources */,
+				E3C520292B821C5A001ACD82 /* ViewMapController.swift in Sources */,
 				E3201F722A823078006DBA8D /* Films.swift in Sources */,
 				E3201F5C2A822955006DBA8D /* AppDelegate.swift in Sources */,
 				E3201F5E2A822955006DBA8D /* SceneDelegate.swift in Sources */,
@@ -178,6 +186,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -210,6 +219,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -238,6 +248,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -270,6 +281,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -298,6 +310,8 @@
 				DEVELOPMENT_TEAM = NT93UW6SS7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Films/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "we need your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "we weed your location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -326,6 +340,8 @@
 				DEVELOPMENT_TEAM = NT93UW6SS7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Films/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "we need your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "we weed your location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

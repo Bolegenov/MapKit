@@ -8,18 +8,46 @@
 import UIKit
 
 class TableViewController: UITableViewController {
+    
+    
+    var cinema = Cinema()
+    var timer = Timer()
+    let getDate = Date()
+    
 
+    
     @IBOutlet weak var imageview: UIImageView!
     
     @IBAction func addFilm(_ sender: Any) {
+       
+//        tableView.reloadData()
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "dd.MM.yyyy, HH:mm:ss"
+//        print(dateFormatter.string(from: getDate))
         
-       arrayFilms.append(Films(name: "new name", year: "new year", imagename: "avatar", genre: "new genre", budget: "new budget", description: "new text"))
-                          
-        tableView.reloadData()
+       
+        arrayFilms.insert((Films(name: "new name", year: "new year", imagename: "avatar", genre: "new genre", budget: "new budget", description: "new text")), at: 0)
+      
+        
+       
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+        
+//        timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(addFilm), userInfo: nil, repeats: true)
+    }
+
+    var array = [Cinema(name: "Esenta Moll", imageName: "", detailAbout: "Kinopark 11 (Есентай) IMAX", latitude: 37.75024408033411, longitude: -122.48027421216699),Cinema(name: "Time Square", imageName: "timeSquare", detailAbout: """
+                           Times Square is now considered the heart of New York. In time, it has become the symbol of this vibrant metropolis, with its huge, illuminated advertising hoardings: the star of many a movie!
+                           """, latitude: 40.756218690289714, longitude: -73.98693225397068)]
+
+   
+
+    var arrayFilms = [Films (name: "Avatar",namecinema: "Kinopark 11 (Есентай) IMAX", year: "Год производства:  2009", imagename: "image", genre: "Жанр:  Драмы, Боевики, Приключения, Фантастика, Фильмы про НЛО", budget: "Бюджет:  237 миллионов USD", description: "О фильме \n Бывший морпех Джейк Салли прикован к инвалидному креслу. Несмотря на немощное тело, Джейк в душе по-прежнему остается воином. Он получает задание совершить путешествие в несколько световых лет к базе землян на планете Пандора, где корпорации добывают редкий минерал, имеющий огромное значение для выхода Земли из энергетического кризиса.", latitude: 37.75024408033411, longitude: -122.48027421216699), Films(name: "Переводчик", namecinema: "Chaplin MEGA Alma-Ata (ул. Розыбакиева)",  year: "Год производства:  2022", imagename: "Perevod", genre: "Жанр:  боевик, триллер, военный, история, драма", budget: "Бюджет:  $55 000 000", description: "О фильме \n Афганистан, март 2018 года. Во время спецоперации по поиску оружия талибов отряд сержанта армии США Джона Кинли попадает в засаду. В живых остаются только сам Джон, получивший ранение, и местный переводчик Ахмед, который сотрудничает с американцами. Очнувшись на родине, Кинли не помнит, как ему удалось выжить, но понимает, что именно Ахмед спас ему жизнь, протащив на себе через опасную территорию. Теперь чувство вины не даёт Джону покоя, и он решает вернуться за Ахмедом и его семьёй, которых в Афганистане усиленно ищут талибы.",latitude: 37.75024408033411 , longitude: -122.48027421216699), Films(name: "Веном",namecinema: "Cinemax Dostyk Multiplex",  year: "Год производства:  2018", imagename: "venom", genre: " Жанр:  фантастика, боевик, триллер, ужасы", budget: "Бюджет:   100000000 $", description: "О фильме \n Что, если в один прекрасный день в тебя вселится симбиот, который наделит тебя сверхчеловеческими способностями? Вот только Веном — симбиот совсем недобрый, и договориться с ним невозможно. А нужно ли договариваться? Ведь в какой-то момент ты понимаешь, что быть плохим вовсе не так уж и плохо, так даже веселее. А в мире и так слишком много супергероев." , latitude: 37.82278260875653, longitude: -122.36866826463049) ]
     
-    var arrayFilms = [Films (name: "Avatar", year: "Год производства:  2009", imagename: "image", genre: "Жанр:  Драмы, Боевики, Приключения, Фантастика, Фильмы про НЛО", budget: "Бюджет:  237 миллионов USD", description: "О фильме \n Бывший морпех Джейк Салли прикован к инвалидному креслу. Несмотря на немощное тело, Джейк в душе по-прежнему остается воином. Он получает задание совершить путешествие в несколько световых лет к базе землян на планете Пандора, где корпорации добывают редкий минерал, имеющий огромное значение для выхода Земли из энергетического кризиса."), Films(name: "Переводчик", year: "Год производства:  2022", imagename: "Perevod", genre: "Жанр:  боевик, триллер, военный, история, драма", budget: "Бюджет:  $55 000 000", description: "О фильме \n Афганистан, март 2018 года. Во время спецоперации по поиску оружия талибов отряд сержанта армии США Джона Кинли попадает в засаду. В живых остаются только сам Джон, получивший ранение, и местный переводчик Ахмед, который сотрудничает с американцами. Очнувшись на родине, Кинли не помнит, как ему удалось выжить, но понимает, что именно Ахмед спас ему жизнь, протащив на себе через опасную территорию. Теперь чувство вины не даёт Джону покоя, и он решает вернуться за Ахмедом и его семьёй, которых в Афганистане усиленно ищут талибы."), Films(name: "Веном", year: "Год производства:  2018", imagename: "venom", genre: " Жанр:  фантастика, боевик, триллер, ужасы", budget: "Бюджет:   100000000 $", description: "О фильме \n Что, если в один прекрасный день в тебя вселится симбиот, который наделит тебя сверхчеловеческими способностями? Вот только Веном — симбиот совсем недобрый, и договориться с ним невозможно. А нужно ли договариваться? Ведь в какой-то момент ты понимаешь, что быть плохим вовсе не так уж и плохо, так даже веселее. А в мире и так слишком много супергероев.") ]
     
         override func viewDidLoad() {
         super.viewDidLoad()

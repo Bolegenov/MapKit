@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MapKit
 
 class ViewController: UIViewController {
 
@@ -21,9 +22,22 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var labelDescription: UILabel!
     
+
+    @IBAction func mapViewTouched(_ sender: Any) {
+        
+        let mapVC = storyboard?.instantiateViewController(identifier: "detailMapView") as! ViewMapController
+        
+        mapVC.film  = film
+        
+        navigationController?.show(mapVC, sender: self)
+    }
+    
+    var cinema = Cinema()
     var film = Films()
     
     override func viewDidLoad() {
+        
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
